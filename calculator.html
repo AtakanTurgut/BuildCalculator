@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <style>
+            #main{width: 300px; height: 280px; background-color: black;}
+            input{width: 20%; height: 40px; font-size: 20px; margin: 6px;}
+            #sc{width: 96%; height: 50px; background-color: silver}
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <form name="form">
+                <input type="text" name="screen" placeholder="0" id="sc"> <br>
+                <input type="button" value="1" onclick="form.screen.value+=1">
+                <input type="button" value="2" onclick="form.screen.value+=2">
+                <input type="button" value="3" onclick="form.screen.value+=3">
+                <input type="button" value="+" onclick="add()">
+                <br>
+                <input type="button" value="4" onclick="form.screen.value+=4">
+                <input type="button" value="5" onclick="form.screen.value+=5">
+                <input type="button" value="6" onclick="form.screen.value+=6">
+                <input type="button" value="-" onclick="sub()"> 
+                <br>
+                <input type="button" value="7" onclick="form.screen.value+=7">
+                <input type="button" value="8" onclick="form.screen.value+=8">
+                <input type="button" value="9" onclick="form.screen.value+=9">
+                <input type="button" value="/" onclick="di()"> 
+                <br>
+                <input type="button" value="c" onclick="form.screen.value=''">
+                <input type="button" value="0" onclick="form.screen.value+=0">
+                <input type="button" value="=" onclick="form.screen.value=eval(form.screen.value)">
+                <input type="button" value="x" onclick="mul()"> 
+                <br>
+            </form>
+        </div>
+        <script>
+            function add() {
+                var act = 0, b = 0;
+                act = form.screen.value;
+                b = act.charAt(act.length-1);
+                if (b == '+' || b == '-' || b == '/' || b == '*') {
+                    form.screen.value = act.substring(0, act.length-1);
+                    form.screen.value += '+';
+                } else {
+                    form.screen.value += '+';
+                }
+            }
+
+            function sub() {
+                var act = 0, b = 0;
+                act = form.screen.value;
+                b = act.charAt(act.length-1);
+                if (b == '+' || b == '-' || b == '/' || b == '*') {
+                    form.screen.value = act.substring(0, act.length-1);
+                    form.screen.value += '-';
+                } else {
+                    form.screen.value += '-';
+                }
+            }
+
+            function di() {
+                var act = 0, b = 0;
+                act = form.screen.value;
+                b = act.charAt(act.length-1);
+                if (b == '+' || b == '-' || b == '/' || b == '*') {
+                    form.screen.value = act.substring(0, act.length-1);
+                    form.screen.value += '/';
+                } else {
+                    form.screen.value += '/';
+                }
+            }
+            
+            function mul() {
+                var act = 0, b = 0;
+                act = form.screen.value;
+                b = act.charAt(act.length-1);
+                if (b == '+' || b == '-' || b == '/' || b == '*') {
+                    form.screen.value = act.substring(0, act.length-1);
+                    form.screen.value += '*';
+                } else {
+                    form.screen.value += '*';
+                }
+            }
+        </script>
+    </body>
+</html>
