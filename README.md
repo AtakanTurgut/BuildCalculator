@@ -1,3 +1,2 @@
-# BuildCalculator
-Build a Calculator using HTML, CSS and Javascript.
+# Build a Calculator using HTML, CSS and Javascript.
 ![](pictures/calculatorSS.PNG)
